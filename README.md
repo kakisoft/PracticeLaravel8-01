@@ -65,10 +65,11 @@ php artisan migrate:rollback
 
 
 ## Model追加
+8 からは Models階層がデフォルトになった・・・
 ```
-php artisan make:model Models/Post -m
-php artisan make:model Models/Comment -m
-php artisan make:model Models/Question01RegistrationInformation -m
+php artisan make:model Post -m
+php artisan make:model Category001/Comment -m
+php artisan make:model Category002/Question01RegistrationInformation -m
 （編集）
 php artisan migrate
 ```
