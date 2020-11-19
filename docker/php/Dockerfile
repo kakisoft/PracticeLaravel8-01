@@ -1,4 +1,4 @@
-FROM php:7.4.11-fpm-buster
+FROM php:7.4.11-fpm
 
 # install composer
 RUN cd /usr/bin && curl -s http://getcomposer.org/installer | php && ln -s /usr/bin/composer.phar /usr/bin/composer
