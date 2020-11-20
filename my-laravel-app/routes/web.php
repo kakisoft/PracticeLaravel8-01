@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ItemsController;
+use App\Http\Controllers\PlaylistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,5 +24,9 @@ use App\Http\Controllers\ItemsController;
 //==========< 8から書き方変わった？ >==========
 // Route::get('/', [PostsController::class, 'index']);
 Route::get('/', [ItemsController::class, 'index']);
+
+Route::get('playlist/', [PlaylistController::class, 'index']);
+
+
 
 
