@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ItemsController;
 use App\Http\Controllers\PlaylistController;
+use App\Http\Controllers\AlbumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('/', [ItemsController::class, 'index']);
 
 Route::get('playlist/', [PlaylistController::class, 'index']);
 
+Route::get('album/', [AlbumController::class, 'index']);
 
 
 
