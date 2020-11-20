@@ -15,7 +15,15 @@ class AlbumController extends Controller
         $this->albumService = $albumService;
     }
 
+    public function index() {
 
+        // $myPlaylist = $this->albumService->executeSomething(1);
+
+        // dd($myPlaylist);
+
+dd("aaa");
+        return;
+    }
 
     //
 }
