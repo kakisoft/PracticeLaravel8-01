@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Album extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['artist_id', 'name', 'cover'];
 }

@@ -17,7 +17,7 @@ class AlbumController extends Controller
 
     public function index() {
 
-        // $myPlaylist = $this->albumService->executeSomething(1);
+        $myPlaylist = $this->albumService->executeSomething(1);
 
         // dd($myPlaylist);
 
