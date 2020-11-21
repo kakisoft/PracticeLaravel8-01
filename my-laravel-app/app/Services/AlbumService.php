@@ -20,4 +20,8 @@ class AlbumService
         return array();
     }
 
+    public function executeForTest(int $test_param): int
+    {
+        return $test_param + 1;
+    }
 }
