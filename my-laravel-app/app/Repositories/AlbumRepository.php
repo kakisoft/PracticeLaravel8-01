@@ -19,10 +19,22 @@ class AlbumRepository extends AbstractRepository
     public function addMyAlbum(int $artist_id): bool
     {
         try {
-            Album::updateOrCreate([
-                'artist_id' => $artist_id,
-                'name'      => 'name001',
-                'cover'     => 'cover001',
+            //=========================================================
+            //   モデルを直接操作対象とせず、プロパティに保持した値を使用する
+            //=========================================================
+            $this->model->artist_id = $artist_id;
+            $this->model->name  = 'name001';
+            $this->model->cover = 'cover002';
+            $this->model->save();
+
+
+            //=========================================================
+            //   モデルを直接操作対象とせず、プロパティに保持した値を使用する
+            //=========================================================
+            $this->model::updateOrCreate([
+                'artist_id' => '999',
+                'name'      => 'name003',
+                'cover'     => 'cover003',
             ]);
 
             return true;

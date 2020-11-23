@@ -21,7 +21,7 @@ class AlbumController extends Controller
 
         // dd($myPlaylist);
 
-dd("aaa");
+dump("aaa");
         return;
     }
 
