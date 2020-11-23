@@ -13,8 +13,13 @@ abstract class AbstractRepository implements RepositoryInterface
 
     abstract public function getModelClass(): string;
 
-    public function __construct()
+    public function __construct($target_object = null)
     {
-        $this->model = app($this->getModelClass());
+        if( is_null($target_object) ){
+            $this->model = app($this->getModelClass());
+
+        }else{
+            $this->model = $target_object;
+        }
     }
 }

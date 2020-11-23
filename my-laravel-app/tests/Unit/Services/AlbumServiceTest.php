@@ -6,6 +6,8 @@ use Tests\TestCase;
 use App\Services\AlbumService;
 use App\Repositories\AlbumRepository;
 
+// ./vendor/bin/phpunit tests/Unit/Services/AlbumServiceTest.php
+
 class AlbumServiceTest extends TestCase
 {
     private $albumService;
