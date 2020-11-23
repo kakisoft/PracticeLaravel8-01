@@ -26,6 +26,8 @@ use App\Http\Controllers\AlbumController;
 // Route::get('/', [PostsController::class, 'index']);
 Route::get('/', [ItemsController::class, 'index']);
 
+Route::get('item/', [ItemsController::class, 'index']);
+
 Route::get('playlist/', [PlaylistController::class, 'index']);
 
 Route::get('album/', [AlbumController::class, 'index']);
