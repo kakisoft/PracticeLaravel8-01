@@ -19,8 +19,7 @@ class PlaylistController extends Controller
 
         $myPlaylist = $this->playlistRepository->getMyPlaylist(1);
 
-        dd($myPlaylist);
-
+dump($myPlaylist);
 
         return;
     }

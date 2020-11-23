@@ -19,6 +19,7 @@ class AlbumRepository extends AbstractRepository
     public function addMyAlbum(int $artist_id): bool
     {
         try {
+
             //=========================================================
             //   モデルを直接操作対象とせず、プロパティに保持した値を使用する
             //=========================================================

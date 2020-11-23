@@ -31,6 +31,7 @@ Route::get('item/', [ItemsController::class, 'index']);
 Route::get('playlist/', [PlaylistController::class, 'index']);
 
 Route::get('album/', [AlbumController::class, 'index']);
-
+Route::get('album/sampleMethod01/', [AlbumController::class, 'sampleMethod01']);
+Route::get('album/addmylist/{album_id}', [AlbumController::class, 'addmylist']);
 
 
