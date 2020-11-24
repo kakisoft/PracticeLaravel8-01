@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Repositories\AlbumRepository;
+use App\Models\Album;
 
 class AlbumService
 {
@@ -23,5 +24,10 @@ class AlbumService
     public function executeForTest(int $test_param): int
     {
         return $test_param + 1;
+    }
+
+    public function getLatestRecords()
+    {
+        return $this->albumRepository->getLatestRecords();
     }
 }

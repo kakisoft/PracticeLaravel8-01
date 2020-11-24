@@ -16,6 +16,11 @@ class AlbumRepository extends AbstractRepository
         return $this->model->find($id)->toArray();
     }
 
+    public function getLatestRecords()
+    {
+        return $this->model::latest()->get();
+    }
+
     public function addMyAlbum(int $artist_id): bool
     {
         try {

@@ -18,7 +18,10 @@ class AlbumController extends Controller
     }
 
     public function index() {
-        return redirect('/');
+
+        $latestRecords = $this->albumService->getLatestRecords();
+
+        return view('albums.index')->with('albums', $latestRecords);
     }
 
     public function sampleMethod01() {
