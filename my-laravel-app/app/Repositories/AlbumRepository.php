@@ -3,6 +3,8 @@
 namespace App\Repositories;
 
 use App\Models\Album;
+use Exception;
+use Illuminate\Support\Facades\Log;
 
 class AlbumRepository extends AbstractRepository
 {
@@ -24,6 +26,7 @@ class AlbumRepository extends AbstractRepository
     public function addMyAlbum(int $artist_id): bool
     {
         try {
+// throw new Exception("error");
 
             //=========================================================
             //   モデルを直接操作対象とせず、プロパティに保持した値を使用する
@@ -46,6 +49,7 @@ class AlbumRepository extends AbstractRepository
             return true;
 
         } catch (Exception $e) {
+            Log::error($e->getMessage());
             return false;
         }
     }

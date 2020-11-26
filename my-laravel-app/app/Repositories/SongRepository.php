@@ -21,4 +21,16 @@ class SongRepository extends AbstractRepository
         return $this->model::latest()->get();
     }
 
+    public function addMySong(int $song_id): bool
+    {
+        try {
+
+
+
+            return true;
+
+        } catch (Exception $e) {
+            return false;
+        }
+    }
 }
