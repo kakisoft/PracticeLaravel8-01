@@ -3,8 +3,9 @@
 namespace App\Repositories;
 
 use App\Models\Song;
+use App\Repositories\Interfaces\SongRepositoryInterface;
 
-class SongRepository extends AbstractRepository
+class SongRepository extends AbstractRepository implements SongRepositoryInterface
 {
     public function getModelClass(): string
     {
@@ -21,16 +22,14 @@ class SongRepository extends AbstractRepository
         return $this->model::latest()->get();
     }
 
-    public function addMySong(int $song_id): bool
+    public function save($id, array $params)
     {
-        try {
-
-dump($song_id);
-
-            return true;
-
-        } catch (Exception $e) {
-            return false;
-        }
+        return;
     }
+
+    public function delete($id)
+    {
+        return;
+    }
+
 }

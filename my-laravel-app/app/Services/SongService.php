@@ -3,19 +3,21 @@
 namespace App\Services;
 
 use App\Repositories\SongRepository;
+use App\Repositories\Interfaces\SongRepositoryInterface;
 
 class SongService
 {
     private $songRepository;
 
-    public function __construct(SongRepository $songRepository)
+    public function __construct(SongRepositoryInterface $songRepository)
     {
         $this->songRepository = $songRepository;
     }
 
     public function executeSomething(int $song_id): array
     {
-        $this->songRepository->addMySong($song_id);
+        // dd("bbb");
+        // $this->songRepository->addMySong($song_id);
 
         return array();
     }
