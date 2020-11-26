@@ -13,9 +13,9 @@ class SongService
         $this->songRepository = $songRepository;
     }
 
-    public function executeSomething(int $artist_id): array
+    public function executeSomething(int $song_id): array
     {
-        $this->songRepository->addMySong($artist_id);
+        $this->songRepository->addMySong($song_id);
 
         return array();
     }

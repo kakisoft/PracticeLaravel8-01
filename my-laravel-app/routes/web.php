@@ -37,5 +37,5 @@ Route::get('album/addmylist/{album_id}', [AlbumController::class, 'addmylist']);
 
 Route::get('song/', [SongController::class, 'index']);
 Route::get('song/sampleMethod01/', [SongController::class, 'sampleMethod01']);
-Route::get('song/addmylist/{album_id}', [SongController::class, 'addmylist']);
+Route::get('song/addmylist/{song_id}', [SongController::class, 'addmylist']);
 
