@@ -91,6 +91,8 @@ php artisan make:request Question01RegistrationInformationRequest
 
 
 ## Controller 追加
+Laraveベストプラクティスの命名規則では、コントローラ名は単数。  
+https://github.com/alexeymezenin/laravel-best-practices/blob/master/japanese.md  
 ```
 php artisan make:controller PostsController
 php artisan make:controller CommentsController

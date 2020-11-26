@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\Models\Item;
 
-class ItemsController extends Controller
+class ItemController extends Controller
 {
     private $item;
 
