@@ -3,7 +3,6 @@
 namespace App\Services;
 
 use App\Repositories\AlbumRepository;
-use App\Models\Album;
 
 class AlbumService
 {
