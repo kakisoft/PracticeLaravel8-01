@@ -3,9 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-// use App\Repositories\User\SongRepositoryInterface;
-use App\Repositories\Interfaces\SongRepositoryInterface;
-use App\Repositories\SongRepository;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,17 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // // User
-        // $this->app->bind(
-        //     \App\Repositories\User\UserRepositoryInterface::class,
-        //     \App\Repositories\User\UserRepository::class
-        // );
-
-        // Song
-        $this->app->bind(
-            SongRepositoryInterface::class,
-            SongRepository::class
-        );
+        //
     }
 
     /**
