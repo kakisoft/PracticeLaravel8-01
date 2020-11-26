@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use App\Http\Requests\AlbumRequest;
+use App\Services\SongService;
 
 class SongController extends Controller
 {
@@ -28,7 +31,7 @@ class SongController extends Controller
         return response($message, Response::HTTP_OK);
     }
 
-    public function addmylist(SongRequest $request) {
+    public function addmylist(AlbumRequest $request) {
 
         $this->songService->executeSomething( intval($request->song_id) );
 
