@@ -19,6 +19,13 @@ class SongController extends Controller
 
     public function index() {
 
+
+dump(config('myconfig01'));
+dump(config('myconfig01.param01'));
+dump(config('myconfig01.paramset01'));
+dump(config('myconfig01.paramset01.child01'));
+
+
         $latestRecords = $this->songService->getLatestRecords();
 
         return view('songs.index')->with('songs', $latestRecords);
