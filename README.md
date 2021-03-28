@@ -35,6 +35,17 @@ composer install
 必要があれば編集。
 
 
+## .env のDB設定編集
+```
+DB_CONNECTION=mysql
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=myapp01
+DB_USERNAME=user
+DB_PASSWORD=password
+```
+
+
 ## migrate
 ```
 php artisan migrate
