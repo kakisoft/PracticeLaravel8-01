@@ -16,6 +16,11 @@ class ItemController extends Controller
     }
 
     public function index() {
+
+        if(is_null($this->item)){
+            return null;
+        }
+
         $data = $this->item->toArray();
 
 dump($data['id']);
