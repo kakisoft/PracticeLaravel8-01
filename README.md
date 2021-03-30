@@ -74,9 +74,10 @@ composer create-project --prefer-dist  "laravel/laravel=5.5" my-laravel-app
 php artisan migrate:rollback
 ```
 
+## Migration ファイルと Model を作成
+8 からは Models階層がデフォルトになった・・・  
 
-## Model追加
-8 からは Models階層がデフォルトになった・・・
+※単数形  
 ```
 php artisan make:model Post -m
 php artisan make:model Category001/Comment -m
@@ -138,6 +139,37 @@ php artisan db:seed --class=Question01RegistrationInformationTableSeeder
 php artisan migrate:refresh --seed
 ```
 
+_______________________________________________________________________________
+# キャッシュをクリア
+
+```
+# Model を更新した時とか（クラスの変更が反映されてないっぽい時とか）
+composer dump-autoload
+
+-----------------------------------------------
+# 設定ファイルのキャッシュをクリア
+php artisan cache:clear
+
+# アプリケーションのキャッシュをクリア
+php artisan config:clear
+
+# ルートのキャッシュをクリア
+php artisan route:clear
+
+# ビューのキャッシュをクリア
+php artisan view:clear
+
+-----------------------------------------------
+# コンパイルされたクラスをクリア
+php artisan clear-compiled
+
+# 最適化されたクラスローダを生成
+php artisan optimize
+
+# 設定をキャッシュしておかないと、アクセスするたびに毎回全ファイルを読み込む。
+php artisan config:cache
+
+```
 
 _______________________________________________________________________________
 _______________________________________________________________________________
