@@ -20,34 +20,10 @@ class ItemController extends Controller
 
     private function setInitialRecord(){
 
-        //==========< firstOrCreate ：該当のレコードが無ければ作成 >==========
-        $item1 = Item::firstOrCreate([
+        $item = Item::firstOrCreate([
             'name' => 'London to Paris',
             'sub_name' => 'LP'
         ]);
-
-        $item2 = Item::firstOrCreate(
-            ['name' => 'London to Paris2'],
-            ['sub_name' => 'LP2']
-        );
-
-        if ($item2->wasRecentlyCreated) {
-            // This is a new Item
-        }
-        else{
-            // This Item was found in the database
-        }
-
-        //==========< firstOrNew は、インスタンスの作成のみ >==========
-        $id = 3;
-        $item3 = Item::query()->where('id', '=', $id)->firstOrNew([
-            'name' => 'name3',
-            'sub_name' => 'sub_name3'
-        ]);
-
-        // save でレコード作成
-        $item3->save();
-
     }
 
     public function index() {
