@@ -11,6 +11,9 @@ docker-compose down
 ## コンテナに入る
 ```
 docker-compose exec app bash
+
+// NG
+docker-compose exec app bash -c "cd my-laravel-app/"  
 ```
 
 
@@ -122,7 +125,7 @@ php artisan make:controller API/Question01ApiController
 ## シーダ
 ```
 // 作成
-php artisan make:seeder UsersTableSeeder
+php artisan make:seeder ArtistTableSeeder
 php artisan make:seeder Question01RegistrationInformationTableSeeder
 
 
@@ -169,6 +172,12 @@ php artisan optimize
 # 設定をキャッシュしておかないと、アクセスするたびに毎回全ファイルを読み込む。
 php artisan config:cache
 
+```
+
+_______________________________________________________________________________
+## DBリフレッシュ
+```
+php artisan migrate:fresh
 ```
 
 _______________________________________________________________________________
