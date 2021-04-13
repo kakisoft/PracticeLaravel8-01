@@ -25,6 +25,7 @@ use App\Http\Controllers\SongController;
 
 //==========< 8から書き方変わった？ >==========
 // Route::get('/', [PostsController::class, 'index']);
+Route::get('routeSample01/', function () {return 'routeSample01';});
 
 // http://localhost:8000/
 Route::get('/', [ItemController::class, 'index']);
