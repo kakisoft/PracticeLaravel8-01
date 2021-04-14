@@ -1,0 +1,25 @@
+#====================================
+#              変数
+#====================================
+
+# @baseurl = https://challenge-your-limits.herokuapp.com
+@baseurl = http://localhost:8000/q02
+
+#====================================
+# http://localhost:8000/q01/call/me
+#====================================
+
+###
+GET {{baseurl}}/call/my/APIs
+###
+POST {{baseurl}}/call/my/APIs
+###
+PUT {{baseurl}}/call/my/APIs
+###
+PATCH {{baseurl}}/call/my/APIs
+###
+DELETE {{baseurl}}/call/my/APIs
+###
+OPTIONS {{baseurl}}/call/my/APIs
+
+
