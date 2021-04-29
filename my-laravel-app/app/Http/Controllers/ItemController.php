@@ -7,9 +7,14 @@ use Illuminate\Http\Response;
 use App\Models\Item;
 use App\Models\Artist;
 
+/**
+ * 実験的なコードを色々書いては消していってるだけなので、
+ * 挙動の詳細を追ったりしないでね。
+ */
 class ItemController extends Controller
 {
     private $item;
+    private $model;
 
     public function __construct(Item $item)
     {
@@ -18,6 +23,11 @@ class ItemController extends Controller
         $this->item = $item->find(1);
     }
 
+    /**
+     *
+     *
+     * @return
+     */
     private function setInitialRecord(){
 
         $item = Item::firstOrCreate([
@@ -26,6 +36,11 @@ class ItemController extends Controller
         ]);
     }
 
+    /**
+     *
+     *
+     * @return
+     */
     public function index() {
 
         if(is_null($this->item)){
@@ -38,6 +53,39 @@ dump($data['id']);
 
         return response($data['name'], Response::HTTP_OK);
     }
+
+    /**
+     *
+     *
+     * @return
+     */
+    public function executeSampleQuery01() {
+
+        $this->model = app()->make(Item::class);
+
+        $query = $this->model->query();
+        $query->select(
+            'id',
+            'price',
+            'name'
+        );
+        // $query->where('owner_id', '=', $shipperId);
+        // $query->where('name1', 'like', '%' . $params['name'] . '%');
+        // $query->orderBy('code', 'asc');
+        // $query->paginate($limit);
+
+        $query->paginate(5);
+
+        $record01  = $query->get();
+        $record02  = $query->get()->toArray();
+
+echo "<pre>=====================<br>";
+var_dump($record02);
+echo "<br>=====================</pre>";
+
+        return;
+    }
+
 
     /**
      * INSERT or UPDATE

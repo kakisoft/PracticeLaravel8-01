@@ -31,6 +31,7 @@ Route::get('routeSample01/', function () {return 'routeSample01';});
 Route::get('/', [ItemController::class, 'index']);
 
 Route::get('item/', [ItemController::class, 'index']);
+Route::get('item/executeSampleQuery01', [ItemController::class, 'executeSampleQuery01']);
 
 Route::get('playlist/', [PlaylistController::class, 'index']);
 
