@@ -13,10 +13,12 @@ abstract class AbstractRepository implements RepositoryInterface
 
     abstract public function getModelClass(): string;
 
+    // 本当はコンストラクタを２種類作りたかったけど、PHPはオーバーロードがサポートされたなかったよ！
     public function __construct($target_object = null)
     {
         if( is_null($target_object) ){
-            $this->model = app($this->getModelClass());
+            // $this->model = app($this->getModelClass());
+            $this->model = app()->make($this->getModelClass());
 
         }else{
             $this->model = $target_object;
