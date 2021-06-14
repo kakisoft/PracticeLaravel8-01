@@ -13,4 +13,6 @@ RUN apt-get update \
     && apt-get install -y libpq-dev \
     && docker-php-ext-install pdo_mysql pdo_pgsql
 
-WORKDIR /var/www/html
+# WORKDIR /var/www/html
+# WORKDIR /var/
+WORKDIR /var/www/html/my-laravel-app

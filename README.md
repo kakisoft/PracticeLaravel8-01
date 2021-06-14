@@ -12,10 +12,12 @@ docker-compose down
 ```
 docker-compose exec app bash
 
-// NG
-docker-compose exec app bash -c "cd my-laravel-app/"  
-```
+// 外から実行
+docker-compose exec app bash -c "php artisan test --testsuite=Unit"
 
+// NG
+docker-compose exec app bash -c "cd my-laravel-app/  |  php artisan test --testsuite=Unit"
+```
 
 ## 終了時にコンテナを削除
 ```
