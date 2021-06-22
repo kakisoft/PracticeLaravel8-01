@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Jobs\SendReminderEmail;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+Route::get('/SendReminderEmail', function () {
+    $log = (new SendReminderEmail)->delay(10);
+    dispatch($log);
+    return 'ユーザー登録完了を通知するメールを送信しました。';
 });

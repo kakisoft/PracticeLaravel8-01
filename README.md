@@ -6,6 +6,9 @@ Laravel Framework 8.15.0
 ```
 docker-compose up -d
 docker-compose down
+
+// 再起動
+docker-compose restart
 ```
 
 ## コンテナに入る
