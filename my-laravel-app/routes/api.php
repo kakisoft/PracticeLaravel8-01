@@ -20,8 +20,18 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/SendReminderEmail', function () {
+//================================================================
+//
+//================================================================
+Route::get('/SendReminderEmail01', function () {
     $log = (new SendReminderEmail)->delay(10);
     dispatch($log);
-    return 'ユーザー登録完了を通知するメールを送信しました。';
+    return 'ユーザー登録完了を通知するメールを送信しました。01';
 });
+
+
+Route::get('/SendReminderEmail02', function () {
+    SendReminderEmail::dispatch("dispatch");
+    return 'ユーザー登録完了を通知するメールを送信しました。02';
+});
+
