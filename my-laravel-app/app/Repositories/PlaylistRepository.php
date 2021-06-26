@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Playlist;
 
-class playlistRepository extends AbstractRepository
+class PlaylistRepository extends AbstractRepository
 {
     public function getModelClass(): string
     {
