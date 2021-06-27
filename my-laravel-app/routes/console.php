@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Artisan;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
+
+// Command クラスを使わず、クロージャ―で Command を追加するパターン
+//   COMMAND : php artisan hello:closure
+Artisan::command('hello:closure', function () {
+    $this->comment('Hello closure command');
+})->describe('サンプルコマンド（クロージャ）');
