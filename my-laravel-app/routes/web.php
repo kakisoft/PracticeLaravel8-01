@@ -6,6 +6,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\SongController;
+use Illuminate\Contracts\Console\Kernel;  // for Command
 
 /*
 |--------------------------------------------------------------------------
@@ -87,4 +88,26 @@ Route::group(['namespace' => 'API'], function () {
     });
 
 });
+
+
+//============================================================================================
+//                                       Command
+//============================================================================================
+Route::get('/hello-command', function () {
+    Artisan::call('hello:class');
+});
+
+
+Route::get('/hello-command2', function () {
+    Artisan::call('hello:class2', [
+        'name'     => 'kaki',
+        '--switch' => false,
+    ]);
+});
+
+// Kernel クラスを使う
+Route::get('/hello-command-k', function (Kernel $artisan) {
+    $artisan->call('hello:class');
+});
+
 

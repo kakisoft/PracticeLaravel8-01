@@ -38,6 +38,8 @@ class HelloCommand extends Command
     public function handle()
     {
         $this->comment('Hello class command');  // Command で実行する処理
+        echo "Hello class command";  // ブラウザから Command を起動する場合、comment の内容は表示されない
+
         // return 0;
     }
 }
