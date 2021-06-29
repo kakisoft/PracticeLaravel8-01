@@ -105,6 +105,24 @@ class HelloCommand2 extends Command
         $this->info('VERBOSITY_VERY_VERBOSE', OutputInterface::VERBOSITY_VERY_VERBOSE);  // -vv, -vvv で出力
         $this->info('VERBOSITY_DEBUG'       , OutputInterface::VERBOSITY_DEBUG);         // -vvv でのみ出力
 
+        // table
+        $this->table(
+            ['name', 'age'],
+            [
+                ['John', 20],
+                ['Tom' , 35]
+            ]
+        );
+        /*
+        =>
+        +------+-----+
+        | name | age |
+        +------+-----+
+        | John | 20  |
+        | Tom  | 35  |
+        +------+-----+
+        */
+
         //// 【 run 】
         // $tsv = $this->useCase->run($targetDate);
     }
