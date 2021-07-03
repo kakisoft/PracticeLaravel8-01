@@ -15,9 +15,18 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
+        // 'Eventクラス' => [
+        //     'Eventクラスに対応した Listner クラス',
+        // ],
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        PublishProcessor::class => [
+            MessageSubscriber::class
+        ],
+        ReviewRegistered::class => [
+            ReviewIndexCreator::class
+        ]
     ];
 
     /**
@@ -25,8 +34,9 @@ class EventServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         //
+        // Event::listen();
     }
 }
