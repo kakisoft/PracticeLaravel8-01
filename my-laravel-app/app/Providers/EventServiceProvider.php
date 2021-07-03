@@ -18,14 +18,24 @@ class EventServiceProvider extends ServiceProvider
         // 'Eventクラス' => [
         //     'Eventクラスに対応した Listner クラス',
         // ],
+
+        // Registered::class, SendEmailVerificationNotification::class は、Laravel 標準の user に紐づいたクラス？  
+        // 対応するファイルが自動生成されなかった。  
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        PublishProcessor::class => [
-            MessageSubscriber::class
+
+        // ↓のように階層を指定しない場合、「Providers」フォルダに生成される。
+        PublishProcessor::class => [   // app\Providers\PublishProcessor.php
+            MessageSubscriber::class   // app\Providers\MessageSubscriber.php
         ],
-        ReviewRegistered::class => [
-            ReviewIndexCreator::class
+        ReviewRegistered::class => [   // app\Providers\ReviewRegistered.php
+            ReviewIndexCreator::class  // app\Providers\ReviewIndexCreator.php
+        ],
+
+        // ↓のように書くと、「Events」「Listeners」の階層にファイルが作成される。
+        'App\Events\AccessDetection' => [
+            'App\Listeners\AccessDetectionListener',
         ]
     ];
 
