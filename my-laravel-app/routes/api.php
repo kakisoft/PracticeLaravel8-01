@@ -27,7 +27,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // http://localhost:8000/api/event01
 Route::get('event01', function(){
     event(new AccessDetection(Str::random(10)));
-    return 'hoge';
+    return 'event01';
+});
+
+// http://localhost:8000/api/event01-2
+// instead of class you put dispatch here
+Route::get('event01-2', function(){
+    // event(new AccessDetection(Str::random(10)));
+    AccessDetection::dispatch( Hash::make('password') );
+    return 'event01-2';
 });
 
 
