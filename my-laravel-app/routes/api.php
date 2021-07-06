@@ -55,3 +55,9 @@ Route::get('/SendReminderEmail02', function () {
     return 'ユーザー登録完了を通知するメールを送信しました。02';
 });
 
+// http://localhost:8000/api/SendReminderEmail03
+Route::get('/SendReminderEmail03', function () {
+    SendReminderEmail::dispatch("dispatch")->onQueue('emails');
+    return 'ユーザー登録完了を通知するメールを送信しました。03 - "emails" キュー ';
+});
+
