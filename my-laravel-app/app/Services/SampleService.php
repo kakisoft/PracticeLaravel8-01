@@ -17,42 +17,42 @@ class SampleService
     {
         // $this->sampleRepository->addMySample($artist_id);
 
-        return __METHOD__;
+        return $this->sampleRepository->index();
     }
 
     public function create()
     {
-        return __METHOD__;
+        return $this->sampleRepository->create();
     }
 
     public function show()
     {
         // return $this->sampleRepository->getLatestRecords();
-        return __METHOD__;
+        return $this->sampleRepository->show();
     }
 
     public function store()
     {
-        return __METHOD__;
+        return $this->sampleRepository->store();
     }
 
     public function edit()
     {
-        return __METHOD__;
+        return $this->sampleRepository->edit();
     }
 
     public function update()
     {
-        return __METHOD__;
+        return $this->sampleRepository->update();
     }
 
     public function destroy()
     {
-        return __METHOD__;
+        return $this->sampleRepository->delete();
     }
 
     public function delete()
     {
-        return __METHOD__;
+        return $this->sampleRepository->delete();
     }
 }
