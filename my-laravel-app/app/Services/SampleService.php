@@ -13,7 +13,7 @@ class SampleService
         $this->sampleRepository = $sampleRepository;
     }
 
-    public function index()
+    public function index($request)
     {
         // $samples = DB::table('samples');
         // if ($request['limit']) {
