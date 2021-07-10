@@ -13,20 +13,46 @@ class SampleService
         $this->sampleRepository = $sampleRepository;
     }
 
-    public function executeSomething(int $artist_id): array
+    public function index()
     {
-        $this->sampleRepository->addMySample($artist_id);
+        // $this->sampleRepository->addMySample($artist_id);
 
-        return array();
+        return __METHOD__;
     }
 
-    public function executeForTest(int $test_param): int
+    public function create()
     {
-        return $test_param + 1;
+        return __METHOD__;
     }
 
-    public function getLatestRecords()
+    public function show()
     {
-        return $this->sampleRepository->getLatestRecords();
+        // return $this->sampleRepository->getLatestRecords();
+        return __METHOD__;
+    }
+
+    public function store()
+    {
+        return __METHOD__;
+    }
+
+    public function edit()
+    {
+        return __METHOD__;
+    }
+
+    public function update()
+    {
+        return __METHOD__;
+    }
+
+    public function destroy()
+    {
+        return __METHOD__;
+    }
+
+    public function delete()
+    {
+        return __METHOD__;
     }
 }
