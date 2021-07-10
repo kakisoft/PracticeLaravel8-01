@@ -39,6 +39,16 @@ Route::get('sample/update',  [\App\Http\Controllers\SampleController::class, 'up
 Route::get('sample/destroy', [\App\Http\Controllers\SampleController::class, 'destroy']);
 Route::get('sample/delete',  [\App\Http\Controllers\SampleController::class, 'delete']);
 
+/*
+http://localhost:8000/api/sample
+http://localhost:8000/api/sample/create
+http://localhost:8000/api/sample/store
+http://localhost:8000/api/sample/show
+http://localhost:8000/api/sample/edit
+http://localhost:8000/api/sample/update
+http://localhost:8000/api/sample/destroy
+http://localhost:8000/api/sample/delete
+*/
 
 /*
 php artisan make:model Sample --migration

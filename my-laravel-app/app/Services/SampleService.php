@@ -15,7 +15,13 @@ class SampleService
 
     public function index()
     {
-        // $this->sampleRepository->addMySample($artist_id);
+        // $samples = DB::table('samples');
+        // if ($request['limit']) {
+        //     $samples = $samples->limit($request['limit']);
+        // }
+
+        // return new SampleCollection($samples->get());
+
 
         return $this->sampleRepository->index();
     }
@@ -33,6 +39,12 @@ class SampleService
 
     public function store()
     {
+        // $validated = $request->validated();
+        // $sample = Sample::create([
+        //     'name' => $validated['name']
+        // ]);
+        // return new SampleResource($sample);
+
         return $this->sampleRepository->store();
     }
 
@@ -43,11 +55,25 @@ class SampleService
 
     public function update()
     {
+        // $validated = $request->validated();
+        // $sample->fill([
+        //     'name' => $validated['name']
+        // ]);
+        // $sample->save();
+        // return new SampleResource($sample);
+
+
+        // return __METHOD__;
         return $this->sampleRepository->update();
     }
 
     public function destroy()
     {
+        // $sample->delete();
+        // return response()->json(['result' => true]);
+
+        // return __METHOD__;
+
         return $this->sampleRepository->delete();
     }
 

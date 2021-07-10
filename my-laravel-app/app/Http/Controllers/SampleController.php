@@ -2,24 +2,20 @@
 
 namespace App\Http\Controllers;
 
-// use App\Http\Requests\SampleRequest;
-// use App\Http\Resources\SampleCollection;
-// use App\Http\Resources\SampleResource;
-// use App\Models\Sample;
-// use App\OpenApi\Parameters\ListSamplesParameters;
-// use App\OpenApi\RequestBodies\StoreSampleRequestBody;
-// use App\OpenApi\Responses\DestroySuccessResponse;
-// use App\OpenApi\Responses\ErrorNotFoundResponse;
-// use App\OpenApi\Responses\ErrorUnprocessableEntityResponse;
-// use App\OpenApi\Responses\ListSamplesResponse;
-// use App\OpenApi\Responses\SampleResponse;
-// use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\DB;
-// use Vyuldashev\LaravelOpenApi\Attributes as OpenApi;
-
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Services\SampleService;
+use App\Http\Requests\SampleRequest;
+
+/*
+// php artisan make:request SampleRequest
+
+＜備考＞
+Validation 等は、SampleRequest にて実施。
+（StoreRequest, InquireStatusRequest といった感じで、機能単位の切り出しになる事も多い）
+
+
+*/
 
 class SampleController extends Controller
 {
@@ -34,21 +30,18 @@ class SampleController extends Controller
     /**
      * show list
      */
-    public function index(Request $request)
+    public function index(SampleRequest $request)
     {
-        // $samples = DB::table('samples');
-        // if ($request['limit']) {
-        //     $samples = $samples->limit($request['limit']);
-        // }
-
-        // return new SampleCollection($samples->get());
+        // コントローラ層では、ビジネスロジックを記述せず、基本的にはサービスをコールするだけに留める。
+        // ただし、ログの出力・特定のリクエストに対し、決まったレスポンスを返す、といったロジックは入る。
+        // （アクセスに対応する処理は書くが、ビジネスロジックに関係するロジックは記述しない）
         return $this->sampleService->index($request);
     }
 
     /**
      * -
      */
-    public function create(Request $request)
+    public function create(SampleRequest $request)
     {
         return $this->sampleService->create($request);
     }
@@ -56,31 +49,26 @@ class SampleController extends Controller
     /**
      * show 1 record
      */
-    public function show(Request $request)
+    public function show(SampleRequest $request)
     {
-        // return new SampleResource($sample);
-        // return __METHOD__;
         return $this->sampleService->show($request);
     }
 
     /**
      * create new record
      */
-    public function store(Request $request)
+    public function store(SampleRequest $request)
     {
-        // $validated = $request->validated();
-        // $sample = Sample::create([
-        //     'name' => $validated['name']
-        // ]);
-        // return new SampleResource($sample);
+        $returnCode = $this->sampleService->store($request);
 
-        return $this->sampleService->store($request);
+        // Service の実行内容を要件に合うように整形したりとか。
+        return ['receipt_no' => $returnCode];
     }
 
     /**
      * -
      */
-    public function edit(Request $request)
+    public function edit(SampleRequest $request)
     {
         return $this->sampleService->edit($request);
     }
@@ -88,36 +76,23 @@ class SampleController extends Controller
     /**
      * update 1 record
      */
-    public function update(Request $request)
+    public function update(SampleRequest $request)
     {
-        // $validated = $request->validated();
-        // $sample->fill([
-        //     'name' => $validated['name']
-        // ]);
-        // $sample->save();
-        // return new SampleResource($sample);
-
-
-        // return __METHOD__;
         return $this->sampleService->update($request);
     }
 
     /**
      * delete 1 record
      */
-    public function destroy(Request $request)
+    public function destroy(SampleRequest $request)
     {
-        // $sample->delete();
-        // return response()->json(['result' => true]);
-
-        // return __METHOD__;
         return $this->sampleService->destroy($request);
     }
 
     /**
      * delete 1 record
      */
-    public function delete(Request $request)
+    public function delete(SampleRequest $request)
     {
         return $this->sampleService->delete($request);
     }
