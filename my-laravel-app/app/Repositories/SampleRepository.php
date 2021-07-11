@@ -43,7 +43,7 @@ class SampleRepository extends AbstractRepository
     public function store($request)
     {
         try {
-            $this->model->name = $request['name'] . Carbon::today()->format('Y-m-d');
+            $this->model->name = $request['name'] . Carbon::now()->format('Y-m-d  H:i:s');
             $this->model->save();
 
             // Return Last Inserted ID
