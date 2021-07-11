@@ -24,6 +24,16 @@ use Illuminate\Contracts\Console\Kernel;  // for Command
 // });
 
 
+//----------------
+//  simple test
+//----------------
+// http://localhost:8000/api/hello
+Route::get('hello/', function () {
+        return 'web - hello';
+    }
+);
+
+
 //==========< 8から書き方変わった？ >==========
 // Route::get('/', [PostsController::class, 'index']);
 Route::get('routeSample01/', function () {return 'routeSample01';});

@@ -21,6 +21,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//----------------
+//  simple test
+//----------------
+// http://localhost:8000/api/hello
+Route::get('hello/', function () {
+        return 'api - hello';
+    }
+);
+
 
 //================================================================
 //                           Sample
