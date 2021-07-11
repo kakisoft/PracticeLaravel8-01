@@ -25,7 +25,7 @@ class SampleTableSeeder extends Seeder
         // レコードをオールクリアしています。既存のレコードを残したい場合、ご注意ください
         Sample::truncate();
 
-        // 
+        // create sample records
         Sample::Create(['name' => 'SampleName01',]);
         Sample::Create(['name' => 'SampleName02',]);
         Sample::Create(['name' => 'SampleName03',]);
