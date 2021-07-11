@@ -50,6 +50,16 @@ content-type: application/json
 
 ### Action - destroy
 DELETE {{baseurl}}/sample/destroy/
+content-type: application/json
+
+{
+    "id": "2"
+}
 
 ### Action - delete
 DELETE {{baseurl}}/sample/delete/
+content-type: application/json
+
+{
+    "id": "2"
+}

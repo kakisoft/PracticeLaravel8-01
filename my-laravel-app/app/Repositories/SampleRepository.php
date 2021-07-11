@@ -68,18 +68,21 @@ class SampleRepository extends AbstractRepository
         return $query->update(['name' => $request['name']]);
     }
 
-    public function destroy()
+    public function destroy($id)
     {
-        // $sample->delete();
-        // return response()->json(['result' => true]);
+        $query = $this->model->query();
+        $query->where('id', $id);
 
-        // return __METHOD__;
-
-        return __METHOD__;
+        // return number of deleted records
+        return $query->delete();
     }
 
-    public function delete()
+    public function delete($id)
     {
-        return __METHOD__;
+        $query = $this->model->query();
+        $query->where('id', $id);
+
+        // return number of deleted records
+        return $query->delete();
     }
 }

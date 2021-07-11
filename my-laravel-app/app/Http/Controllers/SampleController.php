@@ -86,7 +86,7 @@ class SampleController extends Controller
      */
     public function destroy(SampleRequest $request)
     {
-        return $this->sampleService->destroy($request);
+        return $this->sampleService->destroy($request->get('id'));
     }
 
     /**
@@ -94,7 +94,7 @@ class SampleController extends Controller
      */
     public function delete(SampleRequest $request)
     {
-        return $this->sampleService->delete($request);
+        return $this->sampleService->delete($request->get('id'));
     }
 
 }

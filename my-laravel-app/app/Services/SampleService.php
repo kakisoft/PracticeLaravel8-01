@@ -51,13 +51,13 @@ class SampleService
         return $this->sampleRepository->update($request);
     }
 
-    public function destroy($request)
+    public function destroy($id)
     {
-        return $this->sampleRepository->destroy($request);
+        return $this->sampleRepository->destroy($id);
     }
 
-    public function delete($request)
+    public function delete($id)
     {
-        return $this->sampleRepository->delete($request);
+        return $this->sampleRepository->delete($id);
     }
 }
