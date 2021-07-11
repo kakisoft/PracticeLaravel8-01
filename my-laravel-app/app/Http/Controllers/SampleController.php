@@ -14,7 +14,6 @@ use App\Http\Requests\SampleRequest;
 Validation 等は、SampleRequest にて実施。
 （StoreRequest, InquireStatusRequest といった感じで、機能単位の切り出しになる事も多い）
 
-
 */
 
 class SampleController extends Controller

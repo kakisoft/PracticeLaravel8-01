@@ -4,6 +4,13 @@ namespace App\Services;
 
 use App\Repositories\SampleRepository;
 
+/*
+＜備考＞
+ビジネスロジックは、ここに記述する。
+「サービスからサービスをコール」すると、ロジックがややこしくなりやすいので、極力別の方法で実現できないかを検討する。
+（ユーティリティに切り出す、トレイトに切り出す、サービスの呼び出し側で制御する、等）
+*/
+
 class SampleService
 {
     private $sampleRepository;
@@ -15,70 +22,42 @@ class SampleService
 
     public function index($request)
     {
-        // $samples = DB::table('samples');
-        // if ($request['limit']) {
-        //     $samples = $samples->limit($request['limit']);
-        // }
-
-        // return new SampleCollection($samples->get());
-
-
-        return $this->sampleRepository->index();
+        // 複雑なビジネスロジックが必要でない場合、リポジトリをのメソッドをコールするだけのシンプルな構造となる。
+        return $this->sampleRepository->index($request);
     }
 
-    public function create()
+    public function create($request)
     {
-        return $this->sampleRepository->create();
+        return $this->sampleRepository->create($request);
     }
 
-    public function show()
+    public function show($request)
     {
-        // return $this->sampleRepository->getLatestRecords();
-        return $this->sampleRepository->show();
+        return $this->sampleRepository->show($request);
     }
 
-    public function store()
+    public function store($request)
     {
-        // $validated = $request->validated();
-        // $sample = Sample::create([
-        //     'name' => $validated['name']
-        // ]);
-        // return new SampleResource($sample);
-
-        return $this->sampleRepository->store();
+        return $this->sampleRepository->store($request);
     }
 
-    public function edit()
+    public function edit($request)
     {
-        return $this->sampleRepository->edit();
+        return $this->sampleRepository->edit($request);
     }
 
-    public function update()
+    public function update($request)
     {
-        // $validated = $request->validated();
-        // $sample->fill([
-        //     'name' => $validated['name']
-        // ]);
-        // $sample->save();
-        // return new SampleResource($sample);
-
-
-        // return __METHOD__;
-        return $this->sampleRepository->update();
+        return $this->sampleRepository->update($request);
     }
 
-    public function destroy()
+    public function destroy($request)
     {
-        // $sample->delete();
-        // return response()->json(['result' => true]);
-
-        // return __METHOD__;
-
-        return $this->sampleRepository->delete();
+        return $this->sampleRepository->destroy($request);
     }
 
-    public function delete()
+    public function delete($request)
     {
-        return $this->sampleRepository->delete();
+        return $this->sampleRepository->delete($request);
     }
 }

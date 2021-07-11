@@ -15,6 +15,13 @@ class SampleRepository extends AbstractRepository
 
     public function index()
     {
+        // $samples = DB::table('samples');
+        // if ($request['limit']) {
+        //     $samples = $samples->limit($request['limit']);
+        // }
+
+        // return new SampleCollection($samples->get());
+
         return __METHOD__;
     }
 
@@ -31,6 +38,12 @@ class SampleRepository extends AbstractRepository
 
     public function store()
     {
+        // $validated = $request->validated();
+        // $sample = Sample::create([
+        //     'name' => $validated['name']
+        // ]);
+        // return new SampleResource($sample);
+
         return __METHOD__;
     }
 
@@ -41,11 +54,23 @@ class SampleRepository extends AbstractRepository
 
     public function update()
     {
+        // $validated = $request->validated();
+        // $sample->fill([
+        //     'name' => $validated['name']
+        // ]);
+        // $sample->save();
+        // return new SampleResource($sample);
+
         return __METHOD__;
     }
 
     public function destroy()
     {
+        // $sample->delete();
+        // return response()->json(['result' => true]);
+
+        // return __METHOD__;
+
         return __METHOD__;
     }
 
