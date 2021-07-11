@@ -12,7 +12,7 @@ class SampleTableSeeder extends Seeder
         php artisan db:seed --class=SampleTableSeeder
 
         ＜作成コマンド＞
-        php artisan db:seed --class=SampleTableSeeder
+        php artisan make:seeder SampleTableSeeder
     */
 
     /**
