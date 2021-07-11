@@ -14,6 +14,11 @@ class SampleRepository extends AbstractRepository
         return Sample::class;
     }
 
+    /**
+     * method description
+     *
+     * @return void
+     */
     public function index($request)
     {
         // リポジトリ層では、Model を直接参照せず、「$this->model」を参照し、モックとの差し替えを容易にしています。
@@ -29,17 +34,32 @@ class SampleRepository extends AbstractRepository
         return $records;
     }
 
+    /**
+     * method description
+     *
+     * @return void
+     */
     public function create($request)
     {
         return __METHOD__;
     }
 
+    /**
+     * method description
+     *
+     * @return void
+     */
     public function show($name)
     {
         // name をキーにレコードを取得（実際には name がユニークになる事は無いでしょうけど）
         return $this->model::where('name', '=', $name)->get();
     }
 
+    /**
+     * method description
+     *
+     * @return void
+     */
     public function store($request)
     {
         try {
@@ -55,11 +75,21 @@ class SampleRepository extends AbstractRepository
         }
     }
 
+    /**
+     * method description
+     *
+     * @return void
+     */
     public function edit($request)
     {
         return __METHOD__;
     }
 
+    /**
+     * method description
+     *
+     * @return void
+     */
     public function update($request)
     {
         $query = $this->model->query();
@@ -68,6 +98,11 @@ class SampleRepository extends AbstractRepository
         return $query->update(['name' => $request['name']]);
     }
 
+    /**
+     * method description
+     *
+     * @return void
+     */
     public function destroy($id)
     {
         $query = $this->model->query();
@@ -77,6 +112,11 @@ class SampleRepository extends AbstractRepository
         return $query->delete();
     }
 
+    /**
+     * method description
+     *
+     * @return void
+     */
     public function delete($id)
     {
         $query = $this->model->query();

@@ -82,7 +82,7 @@ class SampleController extends Controller
     }
 
     /**
-     * delete 1 record
+     * -
      */
     public function destroy(SampleRequest $request)
     {
