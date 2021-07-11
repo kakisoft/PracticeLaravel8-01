@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Models\Sample;
 use Exception;
 use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
 
 class SampleRepository extends AbstractRepository
 {
@@ -41,13 +42,17 @@ class SampleRepository extends AbstractRepository
 
     public function store($request)
     {
-        // $validated = $request->validated();
-        // $sample = Sample::create([
-        //     'name' => $validated['name']
-        // ]);
-        // return new SampleResource($sample);
+        try {
+            $this->model->name = $request['name'] . Carbon::today()->format('Y-m-d');
+            $this->model->save();
 
-        return __METHOD__;
+            // Return Last Inserted ID
+            return $this->model->id;
+
+        } catch (Exception $e) {
+            Log::error($e->getMessage());
+            return false;
+        }
     }
 
     public function edit($request)
@@ -57,14 +62,10 @@ class SampleRepository extends AbstractRepository
 
     public function update($request)
     {
-        // $validated = $request->validated();
-        // $sample->fill([
-        //     'name' => $validated['name']
-        // ]);
-        // $sample->save();
-        // return new SampleResource($sample);
+        $query = $this->model->query();
+        $query->where('id', $request['id']);
 
-        return __METHOD__;
+        return $query->update(['name' => $request['name']]);
     }
 
     public function destroy()

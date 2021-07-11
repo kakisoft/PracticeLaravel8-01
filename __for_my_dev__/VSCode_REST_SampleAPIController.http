@@ -22,6 +22,11 @@ GET {{baseurl}}/sample/create/
 
 ### Action - store
 POST {{baseurl}}/sample/store/
+content-type: application/json
+
+{
+    "name": "StoredSampleName"
+}
 
 ### Action - show
 GET {{baseurl}}/sample/show/
@@ -36,6 +41,12 @@ GET {{baseurl}}/sample/edit/
 
 ### Action - update
 PUT {{baseurl}}/sample/update/
+content-type: application/json
+
+{
+    "id": "1",
+    "name": "UpdatedName"
+}
 
 ### Action - destroy
 DELETE {{baseurl}}/sample/destroy/
