@@ -30,14 +30,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // use App\Http\Controllers\SampleController;
 // Route::resource('sample', SampleController::class);
 
-Route::get('sample/',        [\App\Http\Controllers\SampleController::class, 'index']);
-Route::get('sample/create',  [\App\Http\Controllers\SampleController::class, 'create']);
-Route::get('sample/store',   [\App\Http\Controllers\SampleController::class, 'store']);
-Route::get('sample/show',    [\App\Http\Controllers\SampleController::class, 'show']);
-Route::get('sample/edit',    [\App\Http\Controllers\SampleController::class, 'edit']);
-Route::get('sample/update',  [\App\Http\Controllers\SampleController::class, 'update']);
-Route::get('sample/destroy', [\App\Http\Controllers\SampleController::class, 'destroy']);
-Route::get('sample/delete',  [\App\Http\Controllers\SampleController::class, 'delete']);
+Route::get('sample/',           [\App\Http\Controllers\SampleController::class, 'index']);
+Route::get('sample/create',     [\App\Http\Controllers\SampleController::class, 'create']);
+Route::post('sample/store',     [\App\Http\Controllers\SampleController::class, 'store']);
+Route::get('sample/show',       [\App\Http\Controllers\SampleController::class, 'show']);
+Route::get('sample/edit',       [\App\Http\Controllers\SampleController::class, 'edit']);
+Route::put('sample/update',     [\App\Http\Controllers\SampleController::class, 'update']);
+Route::delete('sample/destroy', [\App\Http\Controllers\SampleController::class, 'destroy']);
+Route::delete('sample/delete',  [\App\Http\Controllers\SampleController::class, 'delete']);
 
 /*
 http://localhost:8000/api/sample

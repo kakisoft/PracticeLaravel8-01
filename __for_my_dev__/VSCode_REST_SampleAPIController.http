@@ -1,0 +1,39 @@
+#====================================
+#              変数
+#====================================
+
+# @baseurl = https://challenge-your-limits.herokuapp.com
+@baseurl = http://localhost:8000/api
+
+#====================================
+#　        Sample Action
+#====================================
+
+### Action - index
+GET {{baseurl}}/sample/
+content-type: application/json
+
+{
+    "limit": "1"
+}
+
+### Action - create
+GET {{baseurl}}/sample/create/
+
+### Action - store
+POST {{baseurl}}/sample/store/
+
+### Action - show
+GET {{baseurl}}/sample/show/
+
+### Action - edit
+GET {{baseurl}}/sample/edit/
+
+### Action - update
+PUT {{baseurl}}/sample/update/
+
+### Action - destroy
+DELETE {{baseurl}}/sample/destroy/
+
+### Action - delete
+DELETE {{baseurl}}/sample/delete/

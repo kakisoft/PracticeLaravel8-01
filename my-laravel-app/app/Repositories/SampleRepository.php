@@ -13,30 +13,32 @@ class SampleRepository extends AbstractRepository
         return Sample::class;
     }
 
-    public function index()
+    public function index($request)
     {
-        // $samples = DB::table('samples');
-        // if ($request['limit']) {
-        //     $samples = $samples->limit($request['limit']);
-        // }
+        // リポジトリ層では、Model を直接参照せず、「$this->model」を参照し、モックとの差し替えを容易にしています。
+        // 通常の使用において、「$this->model」には getModelClass() に記述したクラスが格納されます。（詳細は継承元の AbstractRepository を参照）
+        $query = $this->model->query();
+        $query->select('name');
+        if ($request['limit']) {
+            $query->take($request['limit']);
+        }
+        $records = $query->get();
 
-        // return new SampleCollection($samples->get());
+        return $records;
+    }
 
+    public function create($request)
+    {
         return __METHOD__;
     }
 
-    public function create()
-    {
-        return __METHOD__;
-    }
-
-    public function show()
+    public function show($request)
     {
         // return $this->sampleRepository->getLatestRecords();
         return __METHOD__;
     }
 
-    public function store()
+    public function store($request)
     {
         // $validated = $request->validated();
         // $sample = Sample::create([
@@ -47,12 +49,12 @@ class SampleRepository extends AbstractRepository
         return __METHOD__;
     }
 
-    public function edit()
+    public function edit($request)
     {
         return __METHOD__;
     }
 
-    public function update()
+    public function update($request)
     {
         // $validated = $request->validated();
         // $sample->fill([
