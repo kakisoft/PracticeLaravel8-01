@@ -10,6 +10,9 @@ class SampleTableSeeder extends Seeder
     /*
         ＜実行コマンド＞
         php artisan db:seed --class=SampleTableSeeder
+
+        ＜作成コマンド＞
+        php artisan db:seed --class=SampleTableSeeder
     */
 
     /**
