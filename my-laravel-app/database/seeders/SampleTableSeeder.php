@@ -3,9 +3,15 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Sample;
 
 class SampleTableSeeder extends Seeder
 {
+    /*
+        ＜実行コマンド＞
+        php artisan db:seed --class=SampleTableSeeder
+    */
+
     /**
      * Run the database seeds.
      *
@@ -13,9 +19,14 @@ class SampleTableSeeder extends Seeder
      */
     public function run()
     {
-        // 必要に応じて使用してください
+        // レコードをオールクリアしています。既存のレコードを残したい場合、ご注意ください
         Sample::truncate();
 
-
+        // 
+        Sample::Create(['name' => 'SampleName01',]);
+        Sample::Create(['name' => 'SampleName02',]);
+        Sample::Create(['name' => 'SampleName03',]);
+        Sample::Create(['name' => 'SampleName04',]);
+        Sample::Create(['name' => 'SampleName05',]);
     }
 }
