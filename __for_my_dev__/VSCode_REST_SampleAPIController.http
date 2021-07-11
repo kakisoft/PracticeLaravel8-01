@@ -25,6 +25,11 @@ POST {{baseurl}}/sample/store/
 
 ### Action - show
 GET {{baseurl}}/sample/show/
+content-type: application/json
+
+{
+    "name": "SampleName01"
+}
 
 ### Action - edit
 GET {{baseurl}}/sample/edit/

@@ -17,6 +17,7 @@ class SampleRepository extends AbstractRepository
     {
         // リポジトリ層では、Model を直接参照せず、「$this->model」を参照し、モックとの差し替えを容易にしています。
         // 通常の使用において、「$this->model」には getModelClass() に記述したクラスが格納されます。（詳細は継承元の AbstractRepository を参照）
+        // テスト実行の容易性にこだわる必要が無ければ、「$this->model」を経由せず、Model を直接参照してもOKです。
         $query = $this->model->query();
         $query->select('name');
         if ($request['limit']) {
@@ -32,10 +33,10 @@ class SampleRepository extends AbstractRepository
         return __METHOD__;
     }
 
-    public function show($request)
+    public function show($name)
     {
-        // return $this->sampleRepository->getLatestRecords();
-        return __METHOD__;
+        // name をキーにレコードを取得（実際には name がユニークになる事は無いでしょうけど）
+        return $this->model::where('name', '=', $name)->get();
     }
 
     public function store($request)

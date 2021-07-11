@@ -31,9 +31,9 @@ class SampleService
         return $this->sampleRepository->create($request);
     }
 
-    public function show($request)
+    public function show($name)
     {
-        return $this->sampleRepository->show($request);
+        return $this->sampleRepository->show($name);
     }
 
     public function store($request)

@@ -50,7 +50,8 @@ class SampleController extends Controller
      */
     public function show(SampleRequest $request)
     {
-        return $this->sampleService->show($request);
+        // $request の一部のパラメータを渡す、という方法でも可。
+        return $this->sampleService->show($request->get('name'));
     }
 
     /**
