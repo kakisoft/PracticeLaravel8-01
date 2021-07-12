@@ -42,7 +42,10 @@ class SampleController extends Controller
      */
     public function create(SampleRequest $request)
     {
-        return $this->sampleService->create($request);
+        $returnCode = $this->sampleService->create($request);
+
+        // Service の実行内容を要件に合うように整形したりとか。
+        return ['receipt_no' => $returnCode];
     }
 
     /**
@@ -59,10 +62,9 @@ class SampleController extends Controller
      */
     public function store(SampleRequest $request)
     {
-        $returnCode = $this->sampleService->store($request);
+        $sample = $this->sampleService->store($request);
 
-        // Service の実行内容を要件に合うように整形したりとか。
-        return ['receipt_no' => $returnCode];
+        return $sample;
     }
 
     /**

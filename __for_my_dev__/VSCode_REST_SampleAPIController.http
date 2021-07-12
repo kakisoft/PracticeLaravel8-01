@@ -19,6 +19,11 @@ content-type: application/json
 
 ### Action - create
 GET {{baseurl}}/sample/create/
+content-type: application/json
+
+{
+    "name": "CreatedSampleName"
+}
 
 ### Action - store
 POST {{baseurl}}/sample/store/

@@ -41,7 +41,21 @@ class SampleRepository extends AbstractRepository
      */
     public function create($request)
     {
-        return __METHOD__;
+        try {
+            //=========================================
+            //  pattern 1 : Return Last Inserted ID
+            //=========================================
+            $this->model->name = $request['name'] . '_' . Carbon::now()->format('Y-m-d  H:i:s');
+            $this->model->save();
+
+            // Return Last Inserted ID
+            return $this->model->id;
+
+
+        } catch (Exception $e) {
+            Log::error($e->getMessage());
+            return false;
+        }
     }
 
     /**
@@ -63,11 +77,15 @@ class SampleRepository extends AbstractRepository
     public function store($request)
     {
         try {
-            $this->model->name = $request['name'] . '_' .Carbon::now()->format('Y-m-d  H:i:s');
-            $this->model->save();
+            //=========================================
+            //  pattern 1 : Return Last Inserted ID
+           //=========================================
+            $sample = $this->model->newInstance();
+            $sample->name = $request['name'] . '_' . Carbon::now()->format('Y-m-d H:i:s');
+            $sample->save();
 
-            // Return Last Inserted ID
-            return $this->model->id;
+            // Return Saved Model
+            return $sample;
 
         } catch (Exception $e) {
             Log::error($e->getMessage());
@@ -105,11 +123,17 @@ class SampleRepository extends AbstractRepository
      */
     public function destroy($id)
     {
-        $query = $this->model->query();
-        $query->where('id', $id);
+        try {
+            $sample = $this->model->query()
+                                ->where('id', $id)
+                                ->firstOrFail();
 
-        // return number of deleted records
-        return $query->delete();
+            return $sample->delete();
+
+        } catch (Exception $e) {
+            Log::error($e->getMessage());
+            return false;
+        }
     }
 
     /**
