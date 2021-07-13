@@ -24,6 +24,16 @@ class AlbumRepository extends AbstractRepository
     /**
      *
      */
+    public function getUniqueRecord($params)
+    {
+        // Now Creating ...
+
+        return;
+    }
+
+    /**
+     *
+     */
     public function addMyAlbum(int $artist_id): bool
     {
         try {
