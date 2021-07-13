@@ -46,13 +46,14 @@ Route::get('item/executeSampleQuery01', [ItemController::class, 'executeSampleQu
 
 Route::get('playlist/', [PlaylistController::class, 'index']);
 
-Route::get('album/', [AlbumController::class, 'index']);
-Route::get('album/sampleMethod01/', [AlbumController::class, 'sampleMethod01']);
-Route::get('album/addmylist/{album_id}', [AlbumController::class, 'addmylist']);
+Route::get('album/'                     , [AlbumController::class, 'index']);
+Route::get('album/sampleMethod01/'      , [AlbumController::class, 'sampleMethod01']);
+Route::get('album/getMyAlbum/{album_id}', [AlbumController::class, 'getMyAlbum']);
+Route::get('album/addMyList/{album_id}' , [AlbumController::class, 'addMyList']);
 
-Route::get('song/', [SongController::class, 'index']);
-Route::get('song/sampleMethod01/', [SongController::class, 'sampleMethod01']);
-Route::get('song/addmylist/{song_id}', [SongController::class, 'addmylist']);
+Route::get('song/'                   , [SongController::class, 'index']);
+Route::get('song/sampleMethod01/'    , [SongController::class, 'sampleMethod01']);
+Route::get('song/addMyList/{song_id}', [SongController::class, 'addMyList']);
 
 
 

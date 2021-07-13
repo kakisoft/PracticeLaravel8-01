@@ -13,20 +13,21 @@ class AlbumRepository extends AbstractRepository
         return Album::class;
     }
 
-    public function getMyAlbum(int $id): array
-    {
-        return $this->model->find($id)->toArray();
-    }
-
+    /**
+     *
+     */
     public function getLatestRecords()
     {
         return $this->model::latest()->get();
     }
 
+    /**
+     *
+     */
     public function addMyAlbum(int $artist_id): bool
     {
         try {
-    // throw new Exception("error");
+            // throw new Exception("error");
 
             //=========================================================
             //   モデルを直接操作対象とせず、プロパティに保持した値を使用する

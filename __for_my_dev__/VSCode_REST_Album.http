@@ -1,0 +1,19 @@
+#====================================
+#              変数
+#====================================
+
+# @baseurl = https://challenge-your-limits.herokuapp.com
+@baseurl = http://localhost:8000/album
+
+#====================================
+#　        Sample Action
+#====================================
+
+### {"album_id": "2"} is ignored
+GET {{baseurl}}/getMyAlbum/3
+content-type: application/json
+
+{
+    "album_id": "2"
+}
+

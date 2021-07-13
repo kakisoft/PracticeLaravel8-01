@@ -13,7 +13,7 @@ abstract class AbstractRepository implements RepositoryInterface
 
     abstract public function getModelClass(): string;
 
-    // 本当はコンストラクタを２種類作りたかったけど、PHPはオーバーロードがサポートされたなかったよ！
+    // 本当はコンストラクタを２種類作りたかったけど、PHPはオーバーロードがサポートされてなかったよ！
     public function __construct($targetObject = null)
     {
         if( is_null($targetObject) ){
@@ -24,4 +24,18 @@ abstract class AbstractRepository implements RepositoryInterface
             $this->model = $targetObject;
         }
     }
+
+    /**
+     *
+     */
+    public function getById($id): ?array
+    {
+        $model = $this->model::find($id);
+        if ($model) {
+            return $model->toArray();
+        } else {
+            return null;
+        }
+    }
+
 }

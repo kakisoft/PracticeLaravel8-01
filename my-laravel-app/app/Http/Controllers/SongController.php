@@ -17,13 +17,16 @@ class SongController extends Controller
         $this->songService = $songService;
     }
 
+    /**
+     *
+     */
     public function index() {
 
 
-dump(config('myconfig01'));
-dump(config('myconfig01.param01'));
-dump(config('myconfig01.paramset01'));
-dump(config('myconfig01.paramset01.child01'));
+        dump(config('myconfig01'));
+        dump(config('myconfig01.param01'));
+        dump(config('myconfig01.paramset01'));
+        dump(config('myconfig01.paramset01.child01'));
 
 
         $latestRecords = $this->songService->getLatestRecords();
@@ -31,6 +34,9 @@ dump(config('myconfig01.paramset01.child01'));
         return view('songs.index')->with('songs', $latestRecords);
     }
 
+    /**
+     *
+     */
     public function sampleMethod01() {
 
         $message = "message01";
@@ -38,7 +44,10 @@ dump(config('myconfig01.paramset01.child01'));
         return response($message, Response::HTTP_OK);
     }
 
-    public function addmylist(SongRequest $request) {
+    /**
+     *
+     */
+    public function addMyList(SongRequest $request) {
 
         $this->songService->executeSomething( intval($request->song_id) );
 
