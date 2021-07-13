@@ -39,14 +39,14 @@ Route::get('hello/', function () {
 // use App\Http\Controllers\SampleController;
 // Route::resource('sample', SampleController::class);
 
-Route::get('sample/',           [\App\Http\Controllers\SampleController::class, 'index']);
-Route::get('sample/create',     [\App\Http\Controllers\SampleController::class, 'create']);
-Route::post('sample/store',     [\App\Http\Controllers\SampleController::class, 'store']);
-Route::get('sample/show',       [\App\Http\Controllers\SampleController::class, 'show']);
-Route::get('sample/edit',       [\App\Http\Controllers\SampleController::class, 'edit']);
-Route::put('sample/update',     [\App\Http\Controllers\SampleController::class, 'update']);
-Route::delete('sample/destroy', [\App\Http\Controllers\SampleController::class, 'destroy']);
-Route::delete('sample/delete',  [\App\Http\Controllers\SampleController::class, 'delete']);
+Route::get('sample/',           [\App\Http\Controllers\SampleController::class, 'index']  )->name('index');
+Route::get('sample/create',     [\App\Http\Controllers\SampleController::class, 'create'] )->name('create');
+Route::post('sample/store',     [\App\Http\Controllers\SampleController::class, 'store']  )->name('store');
+Route::get('sample/show',       [\App\Http\Controllers\SampleController::class, 'show']   )->name('show');
+Route::get('sample/edit',       [\App\Http\Controllers\SampleController::class, 'edit']   )->name('edit');
+Route::put('sample/update',     [\App\Http\Controllers\SampleController::class, 'update'] )->name('update');
+Route::delete('sample/destroy', [\App\Http\Controllers\SampleController::class, 'destroy'])->name('destroy');
+Route::delete('sample/delete',  [\App\Http\Controllers\SampleController::class, 'delete'] )->name('delete');
 
 /*
 http://localhost:8000/api/sample
