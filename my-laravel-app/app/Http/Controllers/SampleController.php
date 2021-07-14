@@ -110,6 +110,19 @@ class SampleController extends Controller
      */
     public function sampleAction01(string $date, Request $request)
     {
+        //-----------------------------------------
+        //  Carbon :   subDay と subDays
+        //-----------------------------------------
+        $date1 = new Carbon('2021-07-15 11:23:45');
+        $date2 = new Carbon('2021-07-15 11:23:45');
+
+        echo $date1->subDay(1) . "<br>";
+        echo $date2->subDays(1). "<br>";
+
+
+        //-----------------------------------------
+        //                isDate
+        //-----------------------------------------
         $argumentDate = $date;
 
         if(DateUtil::isDate($argumentDate)){
