@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Services\SampleService;
 use App\Http\Requests\SampleRequest;
+use Carbon\Carbon;
+use App\Utils\DateExtension;
 
 /*
 // php artisan make:request SampleRequest
@@ -98,5 +100,24 @@ class SampleController extends Controller
     {
         return $this->sampleService->delete($request->get('id'));
     }
+
+    //==========================================================================
+    //==========================================================================
+    //==========================================================================
+
+    /**
+     * 適当に実験して遊ぶ用
+     */
+    public function sampleAction01(string $date, Request $request)
+    {
+        $argumentDate = $date;
+
+        if(DateExtension::isDate($argumentDate)){
+
+        }
+
+        return;
+    }
+
 
 }

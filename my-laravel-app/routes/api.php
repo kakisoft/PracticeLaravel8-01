@@ -71,8 +71,15 @@ https://laravel.com/docs/8.x/controllers
 |  PUT/PATCH  |  /sample/{sample}       |  update   |  sample.update   |
 |  DELETE     |  /sample/{sample}       |  destroy  |  sample.destroy  |
 
-
 */
+
+//////////////////
+// SampleAction
+//////////////////
+
+// http://localhost:8000/api/sample/sampleAction01/20211231
+Route::get('sample/sampleAction01/{date}',  [\App\Http\Controllers\SampleController::class, 'sampleAction01'] )->name('sampleAction01');
+
 
 
 //================================================================
