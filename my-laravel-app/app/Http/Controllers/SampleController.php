@@ -7,7 +7,7 @@ use Illuminate\Http\Response;
 use App\Services\SampleService;
 use App\Http\Requests\SampleRequest;
 use Carbon\Carbon;
-use App\Utils\DateExtension;
+use App\Utils\DateUtil;
 
 /*
 // php artisan make:request SampleRequest
@@ -112,8 +112,10 @@ class SampleController extends Controller
     {
         $argumentDate = $date;
 
-        if(DateExtension::isDate($argumentDate)){
-
+        if(DateUtil::isDate($argumentDate)){
+            echo "date";
+        }else{
+            echo "not date";
         }
 
         return;
